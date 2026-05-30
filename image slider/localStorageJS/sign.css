@@ -1,0 +1,15 @@
+fieldset{
+    background-color: bisque;
+    width: 200px;
+    height: 200px;
+}
+.box1{
+    
+    justify-items: center;
+    
+}
+
+input{
+    margin: 10px;
+   
+}

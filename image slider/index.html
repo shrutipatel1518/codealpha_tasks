@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="gallerywrap">
+
+        <img src="images/back-158491_1280.png" id="backbtn" style="width: 97px;">
+
+        <div class="gallery">
+
+            <div>
+                <img src="images/vicky-hladynets-C8Ta0gwPbQg-unsplash.jpg" alt="">
+                <img src="images/billow926-IhamfT394_s-unsplash.jpg" alt="">
+                <img src="images/beyzanur-k-c0v4OukAiJs-unsplash.jpg" alt="">
+            </div>
+
+            <div>
+                <img src="images/gabriel-silverio-u3WmDyKGsrY-unsplash.jpg" alt="">
+                <img src="images/hosein-zanbori-Jn7iSDPKsVo-unsplash.jpg" alt="">
+                <img src="images/scott-butcher-M8YFCSn7YuA-unsplash.jpg" alt="">
+            </div>
+
+        </div>
+
+        <img src="images/Button-Arrow-Right-icon.png" id="nextbtn" style="width: 100px;">
+
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <script>
+
+        let scrollcont = document.querySelector(".gallery");
+        let nextbtn = document.getElementById("nextbtn");
+        let backbtn = document.getElementById("backbtn");
+
+        const images = document.querySelectorAll(".gallery img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+
+        scrollcont.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollcont.style.scrollBehavior = "smooth";
+            scrollcont.scrollLeft += evt.deltaY;
+        });
+
+        nextbtn.addEventListener("click", () => {
+            scrollcont.style.scrollBehavior = "smooth";
+            scrollcont.scrollLeft += 900;
+        });
+
+        backbtn.addEventListener("click", () => {
+            scrollcont.style.scrollBehavior = "smooth";
+            scrollcont.scrollLeft -= 900;
+        });
+
+        images.forEach((img) => {
+
+            img.addEventListener("click", () => {
+
+                lightbox.style.display = "flex";
+                lightboxImg.src = img.src;
+
+            });
+
+        });
+
+        closeBtn.addEventListener("click", () => {
+
+            lightbox.style.display = "none";
+
+        });
+
+        lightbox.addEventListener("click", (e) => {
+
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

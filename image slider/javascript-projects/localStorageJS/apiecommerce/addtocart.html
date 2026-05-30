@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="position: absolute; display: flex; flex-wrap: wrap; position: absolute; display: flex; flex-wrap: wrap; background-color: #9fe7edd5; "">
+    
+    
+    <script>
+        // let body=   document.querySelector("body")
+        // let data=  JSON.parse(localStorage.getItem("item")) 
+        // body.innerHTML+=  `<div style="border:1px solid black;
+        //    padding:20px;
+        //    margin:20px;
+        //    width:300px;
+        //    border-radius:21px"> 
+        //    <img src="${data.thumbnail}" width="100px">
+        //     <h2>  ${data.title}</h2>
+        //     <h2>  ${data.price}</h2>
+        //     </div>` 
+
+        let data=    JSON.parse( localStorage.getItem("item"))
+      console.log(data,"hhhrhrh");
+      
+    let body= document.querySelector("body")
+      
+    data.map((a)=>{
+        body.innerHTML+=`<div style="border:1px solid black; width:250px; margin:20px; padding:10px; background-color: #c67deea7; border-radius: 10px; box-shadow: 2px 2px 2px  rgba(0, 0, 0, 0.5);">
+        <img src="${a.
+            thumbnail
+            }" width="100%" >
+        <h2> ${a.title}</h2>
+        <h3> ${a.price}</h3>
+    
+        `
+ 
+    })
+
+
+    </script>
+</body>
+</html>
